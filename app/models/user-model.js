@@ -1,0 +1,70 @@
+// import { Schema, model } from 'mongoose';
+// import crypto from 'crypto';  // Correctly import the crypto module
+
+// const userSchema = new Schema({
+//   email: { type: String, unique: true },
+//   password: { type: String },
+//   googleId: { type: String },
+//   facebookId: { type: String },
+//   refreshToken: { type: String },
+// }, { timestamps: true });
+
+// const hashPassword = async (password) => {
+//   try {
+//     const salt = crypto.randomBytes(16).toString('hex');
+//     const derivedKey = await crypto.scryptSync(password, salt, 64);
+//     return `${salt}:${derivedKey.toString('hex')}`;
+//   } catch (err) {
+//     throw new Error('Error hashing password');
+//   }
+// };
+
+// const verifyPassword = async (hashedPassword, password) => {
+//   try {
+//     const [salt, key] = hashedPassword.split(':');
+//     const derivedKey = await crypto.scryptSync(password, salt, 64);
+//     return key === derivedKey.toString('hex');
+//   } catch (err) {
+//     throw new Error('Error verifying password');
+//   }
+// };
+
+// const User = model('User', userSchema);
+
+// export { User, hashPassword, verifyPassword };
+
+
+import { Schema, model } from 'mongoose';
+import crypto from 'crypto';
+
+const userSchema = new Schema({
+  email: { type: String, unique: true },
+  password: { type: String },
+  googleId: { type: String },
+  facebookId: { type: String },
+  refreshToken: { type: String },
+}, { timestamps: true });
+
+const hashPassword = async (password) => {
+  try {
+    const salt = crypto.randomBytes(16).toString('hex');
+    const derivedKey = crypto.scryptSync(password, salt, 64);
+    return `${salt}:${derivedKey.toString('hex')}`;
+  } catch (err) {
+    throw new Error('Error hashing password');
+  }
+};
+
+const verifyPassword = async (hashedPassword, password) => {
+  try {
+    const [salt, key] = hashedPassword.split(':');
+    const derivedKey = crypto.scryptSync(password, salt, 64);
+    return key === derivedKey.toString('hex');
+  } catch (err) {
+    throw new Error('Error verifying password');
+  }
+};
+
+const User = model('User', userSchema);
+
+export { User, hashPassword, verifyPassword };
