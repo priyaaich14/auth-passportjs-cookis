@@ -102,7 +102,7 @@ export default function Settings() {
         }
     }
 
-    return (
+return (
         <div>
             <h2>Settings</h2>
             <form onSubmit={handleSubmit}>

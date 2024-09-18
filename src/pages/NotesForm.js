@@ -1,7 +1,6 @@
 import axios from '../config/axios'
 import NotesContext from '../context/NotesContext';
 import {  useContext, useState, useEffect } from 'react';
-
 export default function NotesForm (){
 const { notes, notesDispatch } = useContext(NotesContext)
 const [title, setTitle ]= useState([])

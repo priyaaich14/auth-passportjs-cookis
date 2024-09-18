@@ -134,7 +134,7 @@ export default function Register() {
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleInputChange = (setter) => (e) => {
+const handleInputChange = (setter) => (e) => {
         setter(e.target.value);
         setAuthError(null);
     };

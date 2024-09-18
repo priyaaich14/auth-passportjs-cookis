@@ -107,7 +107,7 @@
 //         setAuthError(null);
 //     };
 
-//     const handleSubmit = async (e) => {
+//    const handleSubmit = async (e) => {
 //         e.preventDefault();
 //         if (runClientSideValidations()) {
 //             const formData = { email, password };

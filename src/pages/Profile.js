@@ -62,7 +62,7 @@ export default function Profile() {
         return daysSinceLastUpdate > 30;
     }
 
-    return (
+return (
         <div>
             <h2>Profile Page</h2>
             <p>Email - {state.user.email}</p>

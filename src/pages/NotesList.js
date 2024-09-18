@@ -7,6 +7,7 @@ export default function NotesList(){
         const userInput = window.confirm("Are you sure?")
         if (userInput){
             try{
+                
                 const response = await axios.delete(`/api/notes/${id}`, {headers : {
                     'Authorization':localStorage.getItem('token')
                 }})

@@ -4,7 +4,6 @@ import axios from '../config/axios'
 import NotesContext from "../context/NotesContext";
 import NotesList from "./NotesList";
 import NotesForm from "./NotesForm";
-
 const notesReducer = (state, action) => {
     switch (action.type) {
         case 'SET_NOTES': {

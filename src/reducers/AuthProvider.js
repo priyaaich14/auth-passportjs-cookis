@@ -5,7 +5,6 @@
 // import { toast } from 'react-toastify';
 // import AuthContext from '../context/AuthContext';
 // import axios from 'axios';
-
 // const initialState = {
 //     user: null,
 //     isLoggedIn: false

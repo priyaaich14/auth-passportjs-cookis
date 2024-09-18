@@ -3,7 +3,6 @@
 // import { Routes, Route, Link } from 'react-router-dom';
 // import { ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
-
 // import { useContext } from 'react';
 // import PrivateRoute from './components/PrivateRoute';
 // import AuthContext from './context/AuthContext';

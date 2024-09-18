@@ -6,7 +6,7 @@ export default function Dashboard(){
         return <p>loading...</p>
     }
 
-    console.log('User data available:', state.user)
+//console.log('User data available:', state.user)
     return (
         <div>
             <h2>Dashboard Page</h2>

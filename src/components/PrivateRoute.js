@@ -6,3 +6,4 @@ export default function PrivateRoute(props) {
         return <Navigate to="/login" />
     }
 }
+

@@ -75,6 +75,7 @@ export default function ResetPassword() {
             setErrors({ confirmPassword: 'Passwords do not match' })
             return
         }
+        
         try {
             await axios.post('http://localhost:3030/api/users/reset-password', { token, newPassword });
             toast('Password reset successfully', { autoClose: 2000 })
