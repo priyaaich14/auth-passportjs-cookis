@@ -5,6 +5,8 @@ export default function Dashboard(){
     if(!state.user) {
         return <p>loading...</p>
     }
+
+    console.log('User data available:', state.user)
     return (
         <div>
             <h2>Dashboard Page</h2>
